@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Biograpi · 360° — 1</title>
+<link rel="stylesheet" href="pannellum.css">
+<style>
+  html,body{margin:0;padding:0;height:100%;background:#000;overflow:hidden;}
+  #pano{width:100%;height:100vh;}
+  .bg-badge{
+    position:absolute;top:14px;left:14px;z-index:5;
+    font:600 13px/1 -apple-system,Segoe UI,Roboto,'Noto Sans Georgian',sans-serif;
+    color:#fff;letter-spacing:.04em;padding:7px 12px;border-radius:999px;
+    background:rgba(0,0,0,.38);backdrop-filter:blur(6px);
+    -webkit-backdrop-filter:blur(6px);pointer-events:none;user-select:none;
+  }
+  .bg-badge b{font-weight:800;}
+</style>
+</head>
+<body>
+<div id="pano"></div>
+<div class="bg-badge"><b>Biograpi</b> · 360°</div>
+<script src="pannellum.js"></script>
+<script>
+  pannellum.viewer('pano', {
+    type: 'multires',
+    multiRes: {
+      basePath: 'bare1',
+      path: '/%l/%s%y_%x',
+      fallbackPath: '/fallback/%s',
+      extension: 'jpg',
+      tileResolution: 512,
+      maxLevel: 4,
+      cubeResolution: 3816
+    },
+    autoLoad: true,
+    autoRotate: -2,
+    autoRotateInactivityDelay: 3000,
+    showZoomCtrl: true,
+    showFullscreenCtrl: true,
+    keyboardZoom: true,
+    mouseZoom: true,
+    hfov: 100,
+    minHfov: 50,
+    maxHfov: 120,
+    compass: false
+  });
+</script>
+</body>
+</html>

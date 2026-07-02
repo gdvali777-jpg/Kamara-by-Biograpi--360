@@ -3,24 +3,22 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<title>Biograpi · 360° — 1</title>
+<title>BARE by Biograpi · 360° — 1</title>
 <link rel="stylesheet" href="pannellum.css">
 <style>
-  html,body{margin:0;padding:0;height:100%;background:#000;overflow:hidden;}
-  #pano{width:100%;height:100vh;}
-  .bg-badge{
-    position:absolute;top:14px;left:14px;z-index:5;
-    font:600 13px/1 -apple-system,Segoe UI,Roboto,'Noto Sans Georgian',sans-serif;
-    color:#fff;letter-spacing:.04em;padding:7px 12px;border-radius:999px;
-    background:rgba(0,0,0,.38);backdrop-filter:blur(6px);
-    -webkit-backdrop-filter:blur(6px);pointer-events:none;user-select:none;
+  html,body{margin:0;padding:0;height:100%;background:#7C3146;overflow:hidden;}
+  #pano{width:100%;height:100vh;background:#7C3146;}
+  .bare-logo{
+    position:absolute;top:16px;left:16px;z-index:5;height:52px;width:auto;
+    filter:drop-shadow(0 3px 10px rgba(0,0,0,.45));
+    pointer-events:none;user-select:none;
   }
-  .bg-badge b{font-weight:800;}
+  @media (max-width:600px){ .bare-logo{height:42px;top:12px;left:12px;} }
 </style>
 </head>
 <body>
 <div id="pano"></div>
-<div class="bg-badge"><b>Biograpi</b> · 360°</div>
+<img class="bare-logo" src="logo.png" alt="BARE by Biograpi">
 <script src="pannellum.js"></script>
 <script>
   pannellum.viewer('pano', {
@@ -37,6 +35,7 @@
     autoLoad: true,
     autoRotate: -2,
     autoRotateInactivityDelay: 3000,
+    backgroundColor: [0.486, 0.192, 0.275],
     showZoomCtrl: true,
     showFullscreenCtrl: true,
     keyboardZoom: true,
